@@ -136,28 +136,108 @@
         "rating_count": 10867
       }
     },
-    "fetchly_footer_pB3D4y": {
-      "type": "fetchly-footer",
-      "custom_css": [],
-      "name": "Fetchly Footer",
+    "fetchly_designers_collection_VTw84t": {
+      "type": "fetchly-designers-collection",
+      "name": "Designers Collection",
       "settings": {
-        "logo": "shopify://shop_images/logo_03b19a62-ffac-44c9-ac0d-1b374e6fb1d7.png",
-        "menu_1_title": "Shop by Category",
-        "menu_1": "shop-by-category",
-        "menu_2_title": "Shop by Brand",
-        "menu_2": "shop-by-brand",
-        "menu_3_title": "About Avora",
-        "menu_3": "about-avora",
-        "subscribe_title": "Subscribe",
-        "subscribe_text": "Join our newsletter to stay up to date on features  and releases.",
-        "email_placeholder": "Email",
-        "button_text": "Subscribe",
-        "disclaimer": "By subscribing you agree to with our Privacy Policy and provide  consent to receive updates from our company.",
-        "instagram_url": "https://www.instagram.com",
-        "email_url": "mailto:luisadriancuellarbarba@gmail.com",
-        "copyright_text": "© 2024 Relume. All rights reserved.",
-        "legal_menu": "policy-menu"
+        "title": "Designers’ Collection",
+        "subtitle": "The finest independent voices in fashion, each with their own story to tell",
+        "primary_text": "Meet the Designers",
+        "primary_link": "",
+        "secondary_text": "Shop by brand",
+        "secondary_link": "",
+        "img_1": "shopify://shop_images/b483450c9a356b994d9ca0b0c1b0a289ae2e2417.jpg",
+        "img_2": "shopify://shop_images/bac31232cdd417ab0579983e11c598395b9c04f4.png",
+        "img_3": "shopify://shop_images/2e9c0e82cde0f7d01b3a3cdbb76af1e76dab6613.png",
+        "img_4": "shopify://shop_images/57e2ff9407150bd4dc428de40fb230071de0778d.png",
+        "img_5": "shopify://shop_images/Placeholder_Image.png",
+        "img_6": "shopify://shop_images/27ad825764047440839142fa0a6dc534e18b6008.jpg"
       }
+    },
+    "fetchly_faq_LNJTVx": {
+      "type": "fetchly-faq",
+      "blocks": {
+        "faq_YVHGaD": {
+          "type": "faq",
+          "settings": {
+            "question": "Do you have US-based stock?",
+            "answer": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p>"
+          }
+        },
+        "faq_mWhbYA": {
+          "type": "faq",
+          "settings": {
+            "question": "Do you have US-based stock?",
+            "answer": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p>"
+          }
+        },
+        "faq_h6jFXC": {
+          "type": "faq",
+          "settings": {
+            "question": "Do you have US-based stock?",
+            "answer": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p>"
+          }
+        },
+        "faq_JTDPBz": {
+          "type": "faq",
+          "settings": {
+            "question": "Do you have US-based stock?",
+            "answer": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_YVHGaD",
+        "faq_mWhbYA",
+        "faq_h6jFXC",
+        "faq_JTDPBz"
+      ],
+      "name": "Fetchly FAQ",
+      "settings": {
+        "aria_label": "Frequently Asked Questions",
+        "title": "Frequently Asked Questions",
+        "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p>",
+        "button_text": "Contact us",
+        "button_link": "shopify://policies/privacy-policy",
+        "first_open": true
+      }
+    },
+    "fetchly_lookbook_xXRDhQ": {
+      "type": "fetchly-lookbook",
+      "blocks": {
+        "image_c6gDjW": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/3490b0a96f57b43218d309e4ef80ce03eca1dd5c.png"
+          }
+        },
+        "image_RTQK6A": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/57e2ff9407150bd4dc428de40fb230071de0778d.png"
+          }
+        },
+        "image_mGLym8": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Placeholder_Image.png"
+          }
+        },
+        "image_Kf7L4f": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/f64de4e2b554223b99c9c6775ea9962727aef799.png"
+          }
+        }
+      },
+      "block_order": [
+        "image_c6gDjW",
+        "image_RTQK6A",
+        "image_mGLym8",
+        "image_Kf7L4f"
+      ],
+      "name": "Fetchly Lookbook",
+      "settings": {}
     },
     "fetchly_membership_6DiGnd": {
       "type": "fetchly-membership",
@@ -200,48 +280,36 @@
         "button_link": ""
       }
     },
-    "fetchly_lookbook_xXRDhQ": {
-      "type": "fetchly-lookbook",
-      "blocks": {
-        "image_c6gDjW": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/3490b0a96f57b43218d309e4ef80ce03eca1dd5c.png"
-          }
-        },
-        "image_RTQK6A": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/57e2ff9407150bd4dc428de40fb230071de0778d.png"
-          }
-        },
-        "image_mGLym8": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/Placeholder_Image.png"
-          }
-        },
-        "image_Kf7L4f": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/f64de4e2b554223b99c9c6775ea9962727aef799.png"
-          }
-        }
-      },
-      "block_order": [
-        "image_c6gDjW",
-        "image_RTQK6A",
-        "image_mGLym8",
-        "image_Kf7L4f"
-      ],
-      "name": "Fetchly Lookbook",
-      "settings": {}
+    "fetchly_footer_pB3D4y": {
+      "type": "fetchly-footer",
+      "custom_css": [],
+      "name": "Fetchly Footer",
+      "settings": {
+        "logo": "shopify://shop_images/logo_03b19a62-ffac-44c9-ac0d-1b374e6fb1d7.png",
+        "menu_1_title": "Shop by Category",
+        "menu_1": "shop-by-category",
+        "menu_2_title": "Shop by Brand",
+        "menu_2": "shop-by-brand",
+        "menu_3_title": "About Avora",
+        "menu_3": "about-avora",
+        "subscribe_title": "Subscribe",
+        "subscribe_text": "Join our newsletter to stay up to date on features  and releases.",
+        "email_placeholder": "Email",
+        "button_text": "Subscribe",
+        "disclaimer": "By subscribing you agree to with our Privacy Policy and provide  consent to receive updates from our company.",
+        "instagram_url": "https://www.instagram.com",
+        "email_url": "mailto:luisadriancuellarbarba@gmail.com",
+        "copyright_text": "© 2024 Relume. All rights reserved.",
+        "legal_menu": "policy-menu"
+      }
     }
   },
   "order": [
     "fetchly_hero_i8DpdT",
     "fetchly_designer_slider_Xnktpt",
     "fetchly_new_arrivals_xfR8yC",
+    "fetchly_designers_collection_VTw84t",
+    "fetchly_faq_LNJTVx",
     "fetchly_lookbook_xXRDhQ",
     "fetchly_membership_6DiGnd",
     "fetchly_footer_pB3D4y"

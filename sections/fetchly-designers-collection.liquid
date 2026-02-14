@@ -1,0 +1,271 @@
+<section class="fetchly-designers">
+  <div class="fetchly-designers__wrap">
+
+    <div class="fetchly-designers__float fetchly-designers__float--1">
+      {% if section.settings.img_1 %}
+        <img src="{{ section.settings.img_1 | image_url: width: 900 }}" alt="" loading="lazy">
+      {% endif %}
+    </div>
+
+    <div class="fetchly-designers__float fetchly-designers__float--2">
+      {% if section.settings.img_2 %}
+        <img src="{{ section.settings.img_2 | image_url: width: 900 }}" alt="" loading="lazy">
+      {% endif %}
+    </div>
+
+    <div class="fetchly-designers__float fetchly-designers__float--3">
+      {% if section.settings.img_3 %}
+        <img src="{{ section.settings.img_3 | image_url: width: 900 }}" alt="" loading="lazy">
+      {% endif %}
+    </div>
+
+    <div class="fetchly-designers__float fetchly-designers__float--4">
+      {% if section.settings.img_4 %}
+        <img src="{{ section.settings.img_4 | image_url: width: 900 }}" alt="" loading="lazy">
+      {% endif %}
+    </div>
+
+    <div class="fetchly-designers__float fetchly-designers__float--5">
+      {% if section.settings.img_5 %}
+        <img src="{{ section.settings.img_5 | image_url: width: 900 }}" alt="" loading="lazy">
+      {% endif %}
+    </div>
+
+    <div class="fetchly-designers__float fetchly-designers__float--6">
+      {% if section.settings.img_6 %}
+        <img src="{{ section.settings.img_6 | image_url: width: 900 }}" alt="" loading="lazy">
+      {% endif %}
+    </div>
+
+    <div class="fetchly-designers__card">
+      {% if section.settings.title != blank %}
+        <h2 class="fetchly-designers__title">{{ section.settings.title }}</h2>
+      {% endif %}
+
+      {% if section.settings.subtitle != blank %}
+        <p class="fetchly-designers__subtitle">{{ section.settings.subtitle }}</p>
+      {% endif %}
+
+      <div class="fetchly-designers__actions">
+        {% if section.settings.primary_text != blank and section.settings.primary_link != blank %}
+          <a class="fetchly-designers__btn fetchly-designers__btn--primary" href="{{ section.settings.primary_link }}">
+            {{ section.settings.primary_text }}
+          </a>
+        {% endif %}
+
+        {% if section.settings.secondary_text != blank and section.settings.secondary_link != blank %}
+          <a class="fetchly-designers__btn fetchly-designers__btn--secondary" href="{{ section.settings.secondary_link }}">
+            {{ section.settings.secondary_text }}
+          </a>
+        {% endif %}
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+.fetchly-designers{
+  background:#f6f0ea;
+  padding:190px 0;
+  overflow:hidden;
+}
+
+.fetchly-designers__wrap{
+  position:relative;
+  max-width:1200px;
+  margin:0 auto;
+  padding:0 34px;
+  min-height:520px;
+}
+
+.fetchly-designers__card{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%, -50%);
+  z-index:2;
+
+  width:min(760px, 100%);
+  background:rgba(255,255,255,.55);
+  border:1px solid rgba(58,11,11,.10);
+  border-radius:22px;
+  padding:54px 54px 46px;
+  text-align:center;
+  backdrop-filter: blur(1px);
+}
+
+.fetchly-designers__title{
+  margin:0 0 16px;
+  font-size:66px;
+  line-height:1.02;
+  color:#3a0b0b;
+  font-weight:600;
+  letter-spacing:-0.02em;
+}
+
+.fetchly-designers__subtitle{
+  margin:0 auto 26px;
+  max-width:520px;
+  font-size:16px;
+  line-height:1.6;
+  color:#3a0b0b;
+  opacity:.9;
+}
+
+.fetchly-designers__actions{
+  display:flex;
+  justify-content:center;
+  gap:16px;
+  flex-wrap:wrap;
+}
+
+.fetchly-designers__btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:12px 22px;
+  border-radius:999px;
+  text-decoration:none;
+  font-size:14px;
+  border:1px solid rgba(58,11,11,.45);
+}
+
+.fetchly-designers__btn--primary{
+  background:#3a0b0b;
+  color:#f6f0ea;
+  border-color:#3a0b0b;
+}
+
+.fetchly-designers__btn--primary:hover{
+  opacity:.92;
+}
+
+.fetchly-designers__btn--secondary{
+  background:transparent;
+  color:#3a0b0b;
+}
+
+.fetchly-designers__btn--secondary:hover{
+  background:rgba(58,11,11,.06);
+}
+
+.fetchly-designers__float{
+  position:absolute;
+  z-index:1;
+  border-radius:16px;
+  overflow:hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,.10);
+}
+
+.fetchly-designers__float img{
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:cover;
+}
+
+.fetchly-designers__float--1{
+  width:292px; height:340px;
+  left:-10px; top:-332px;
+}
+
+.fetchly-designers__float--2{
+  width:292px; height:340px;
+  right:121px; top:-198px;
+}
+
+.fetchly-designers__float--3{
+  width:270px; height:310px;
+  right:-40px; top:85px;
+  z-index:0;
+}
+
+.fetchly-designers__float--4{
+width:240px; height:279px;
+  right:-10px; bottom:-320px;
+}
+
+.fetchly-designers__float--5{
+  width:240px; height:279px;
+  left:165px; top:240px;z-index:2;
+}
+
+.fetchly-designers__float--6{
+  width:270px; height:314px;
+  left:60px; top:488px;
+}
+
+@media (max-width: 900px){
+.fetchly-designers{
+ height:812px;
+  padding:0px 0;
+  overflow:hidden;
+}
+  .fetchly-designers__wrap{
+    padding:0 22px;
+    min-height:980px;
+  }
+
+  .fetchly-designers__float{
+    width:150px;
+    height:180px;
+    left:50%;
+    transform:translateX(-50%);
+    border-radius:14px;
+    overflow:hidden;
+  }
+
+  .fetchly-designers__float img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+  }
+
+  .fetchly-designers__float--1{top: -20px;left: 122px;}
+  .fetchly-designers__float--2{ top: 170px;transform:translateX(calc(-50% + 100px));}
+  .fetchly-designers__float--3{ top: 294px;transform:translateX(calc(-50% + 120px));}
+  .fetchly-designers__float--4{ top: 645px;transform:translateX(calc(-50% + 160px));}
+  .fetchly-designers__float--5{ top: 450px;transform: translateX(calc(-50% - 185px));}
+  .fetchly-designers__float--6{ top: 560px;transform: translateX(calc(-50% - 146px));}
+
+  .fetchly-designers__card{
+        position: absolute;
+        top: -150px;
+        left: auto;
+        transform: none;
+        width: 100%;
+        max-width: 640px;
+        margin: 420px auto 0;
+        padding: 34px 22px 28px;
+        border-radius: 20px;
+  }
+}
+
+</style>
+
+{% schema %}
+{
+  "name": "Designers Collection",
+  "settings": [
+    { "type": "text", "id": "title", "label": "Title", "default": "Designers’ Collection" },
+    { "type": "text", "id": "subtitle", "label": "Subtitle", "default": "The finest independent voices in fashion, each with their own story to tell" },
+
+    { "type": "text", "id": "primary_text", "label": "Primary button text", "default": "Meet the Designers" },
+    { "type": "url", "id": "primary_link", "label": "Primary button link" },
+
+    { "type": "text", "id": "secondary_text", "label": "Secondary button text", "default": "Shop by brand" },
+    { "type": "url", "id": "secondary_link", "label": "Secondary button link" },
+
+    { "type": "image_picker", "id": "img_1", "label": "Image 1 (top left)" },
+    { "type": "image_picker", "id": "img_2", "label": "Image 2 (top right)" },
+    { "type": "image_picker", "id": "img_3", "label": "Image 3 (right mid)" },
+    { "type": "image_picker", "id": "img_4", "label": "Image 4 (right big)" },
+    { "type": "image_picker", "id": "img_5", "label": "Image 5 (left mid)" },
+    { "type": "image_picker", "id": "img_6", "label": "Image 6 (bottom)" }
+  ],
+  "presets": [
+    { "name": "Designers Collection" }
+  ]
+}
+{% endschema %}
