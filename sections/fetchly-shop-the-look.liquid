@@ -41,6 +41,17 @@
         <div class="fetchly-stl__rating" data-stl-rating></div>
       </div>
 
+    <div class="fetchly-stl__gallery">
+    <div class="fetchly-stl__gallery-main"></div>
+    <div class="fetchly-stl__gallery-thumbs">
+        <div class="fetchly-stl__thumb"></div>
+        <div class="fetchly-stl__thumb"></div>
+        <div class="fetchly-stl__thumb"></div>
+        <div class="fetchly-stl__thumb"></div>
+        <div class="fetchly-stl__thumb"></div>
+    </div>
+    </div>
+
       <div class="fetchly-stl__controls">
         <div class="fetchly-stl__field">
           <div class="fetchly-stl__label">Color</div>
@@ -112,10 +123,14 @@
         ]
       </script>
     </div>
+
   </div>
 </section>
 
 <style>
+.fetchly-stl__gallery{
+  display: none;
+}
 .fetchly-stl{
   background: {{ section.settings.bg | default: "#6b2b22" }};
   color: {{ section.settings.fg | default: "#f6f0ea" }};
@@ -353,36 +368,119 @@
   opacity: .8;
 }
 
+.fetchly-stl__gallery{
+  margin-top: 18px;
+}
+
+.fetchly-stl__gallery-main{
+  width:100%;
+  aspect-ratio: 1 / 1;
+  border-radius:18px;
+  background: rgba(255,255,255,.18);
+  border: 1px solid rgba(246,240,234,.25);
+}
+
+.fetchly-stl__gallery-thumbs{
+  display:flex;
+  gap:10px;
+  margin-top:14px;
+  width:100%;
+}
+
+.fetchly-stl__thumb{
+  flex: 1 1 0;
+  aspect-ratio: 1 / 1;
+  height: auto;
+  border-radius:10px;
+  background: rgba(255,255,255,.18);
+  border: 1px solid rgba(246,240,234,.25);
+}
+
 @media (max-width: 900px){
+    .fetchly-stl__gallery{
+        display: block;
+    }
   .fetchly-stl{
-    padding: 70px 0;
+    padding:0;
   }
 
   .fetchly-stl__inner{
-    grid-template-columns: 1fr;
-    gap: 26px;
-    padding: 0 22px;
+    grid-template-columns:1fr;
+    gap:0;
+    padding:0;
+    max-width:none;
   }
 
-  .fetchly-stl__image,
+  .fetchly-stl__image{
+    height: auto;
+    min-height: 0;
+    border-radius: 0;
+  }
+
   .fetchly-stl__image img,
   .fetchly-stl__ph{
-    min-height: 420px;
-    height: 420px;
+    min-height:520px;
+ 
+  }
+
+  .fetchly-stl__panel{
+    padding: 28px 22px 34px;
+  }
+
+  .fetchly-stl__panel-top{
+    align-items:flex-end;
   }
 
   .fetchly-stl__product-title{
-    font-size: 42px;
+    font-size:44px;
+    margin:0 0 10px;
   }
 
   .fetchly-stl__price{
-    font-size: 28px;
+    font-size:28px;
   }
 
   .fetchly-stl__rating{
-    margin-top: 10px;
+    margin-top: 0;
+    font-size: 12px;
+    opacity:.85;
+  }
+
+  .fetchly-stl__controls{
+    margin-top: 20px;
+  }
+
+  .fetchly-stl__summary{
+    padding: 18px 0;
+  }
+
+  .fetchly-stl__cta{
+    margin-top: 22px;
+  }
+
+  .fetchly-stl__add{
+    height: 56px;
+    font-size: 14px;
   }
 }
+
+@media (max-width: 560px){
+  .fetchly-stl__image{
+    min-height: 520px;
+  }
+
+  .fetchly-stl__image img,
+  .fetchly-stl__ph{
+    height:520px;
+    min-height:520px;
+  }
+
+  .fetchly-stl__thumb{
+    width:52px;
+    height:52px;
+  }
+}
+
 </style>
 
 <script>
