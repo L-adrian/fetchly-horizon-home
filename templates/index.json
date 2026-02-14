@@ -136,6 +136,64 @@
         "rating_count": 10867
       }
     },
+    "fetchly_shop_the_look_xJz7B4": {
+      "type": "fetchly-shop-the-look",
+      "blocks": {
+        "hotspot_FEWRDk": {
+          "type": "hotspot",
+          "settings": {
+            "x": 70,
+            "y": 20,
+            "title": "Product name",
+            "price": "$55",
+            "rating_text": "★★★★★ (3.5 stars) • 10 reviews",
+            "colors": "#ffffff, #2c2c2c, #7f7f7f, #c4bdb6",
+            "sizes": "S, M, L, XL",
+            "details": "<p>Discover our new clothing line, blending comfort and style.</p><p>Explore this versatile clothing collection for your projects.</p>"
+          }
+        },
+        "hotspot_XteMne": {
+          "type": "hotspot",
+          "settings": {
+            "x": 55,
+            "y": 35,
+            "title": "Product name",
+            "price": "$55",
+            "rating_text": "★★★★★ (3.5 stars) • 10 reviews",
+            "colors": "#ffffff, #2c2c2c, #7f7f7f, #c4bdb6",
+            "sizes": "S, M, L, XL",
+            "details": "<p>Discover our new clothing line, blending comfort and style.</p><p>Explore this versatile clothing collection for your projects.</p>"
+          }
+        },
+        "hotspot_aD3Nqk": {
+          "type": "hotspot",
+          "settings": {
+            "x": 20,
+            "y": 40,
+            "title": "Product name",
+            "price": "$55",
+            "rating_text": "★★★★★ (3.5 stars) • 10 reviews",
+            "colors": "#ffffff, #2c2c2c, #7f7f7f, #c4bdb6",
+            "sizes": "S, M, L, XL",
+            "details": "<p>Discover our new clothing line, blending comfort and style.</p><p>Explore this versatile clothing collection for your projects.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "hotspot_FEWRDk",
+        "hotspot_XteMne",
+        "hotspot_aD3Nqk"
+      ],
+      "name": "Shop the look (Mock)",
+      "settings": {
+        "image": "shopify://shop_images/f64de4e2b554223b99c9c6775ea9962727aef799.png",
+        "bg": "#6b2b22",
+        "fg": "#f6f0ea",
+        "size_chart_text": "<p>Size chart info goes here.</p>",
+        "model_info_text": "<p>Model info goes here.</p>",
+        "subtext": "Free shipping over $50"
+      }
+    },
     "fetchly_designers_collection_VTw84t": {
       "type": "fetchly-designers-collection",
       "name": "Designers Collection",
@@ -308,6 +366,7 @@
     "fetchly_hero_i8DpdT",
     "fetchly_designer_slider_Xnktpt",
     "fetchly_new_arrivals_xfR8yC",
+    "fetchly_shop_the_look_xJz7B4",
     "fetchly_designers_collection_VTw84t",
     "fetchly_faq_LNJTVx",
     "fetchly_lookbook_xXRDhQ",
