@@ -1,16 +1,18 @@
 <section class="fetchly-hero">
-  <div class="fetchly-hero__bg">
-    {% if section.settings.background_image %}
-      <img
-        src="{{ section.settings.background_image | image_url: width: 2000 }}"
-        alt="{{ section.settings.background_image.alt | escape }}"
-        loading="eager"
-        class="fetchly-hero__image"
-      >
-    {% endif %}
-  </div>
-
+<div class="fetchly-hero__bg">
+  <video
+    class="fetchly-hero__video"
+    autoplay
+    muted
+    loop
+    playsinline
+  >
+    <source src="{{ 'black-woman-face-and-traditional.mp4' | asset_url }}" type="video/mp4">
+  </video>
   <div class="fetchly-hero__overlay"></div>
+
+</div>
+
 
   <div class="fetchly-hero__content">
     {% if section.settings.eyebrow != blank %}
@@ -39,18 +41,98 @@
         {{ section.settings.button_label }}
       </a>
     {% endif %}
+    <div class="fetchly-hero__grid_container">
+        <!-- Card 1 -->
+        <div class="fetchly-hero__grid_card">
+            <div class="fetchly-hero__grid_icon">
+            <img src="{{ 'icon-store-managed.png' | asset_url }}" alt="US based storage" width="48" height="48">
+            </div>
+            <h4 class="fetchly-hero__grid_title">US based storage</h4>
+            <p class="fetchly-hero__grid_text">Fast and reliable delivery.</p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="fetchly-hero__grid_card">
+            <div class="fetchly-hero__grid_icon">
+            <img src="{{ 'icon-store-managed.png' | asset_url }}" alt="US based storage" width="48" height="48">
+            </div>
+            <h4 class="fetchly-hero__grid_title">40+ designers</h4>
+            <p class="fetchly-hero__grid_text">Explore our selection of African fashion designers.</p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="fetchly-hero__grid_card">
+            <div class="fetchly-hero__grid_icon">
+            <img src="{{ 'icon-store-managed.png' | asset_url }}" alt="US based storage" width="48" height="48">
+            </div>
+            <h4 class="fetchly-hero__grid_title">Earn points with every order</h4>
+            <p class="fetchly-hero__grid_text">Join our loyalty program and get bonus points.</p>
+        </div>
+    </div>
   </div>
+  
 </section>
 
 <style>
+.fetchly-hero__video{
+    
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
+
+.fetchly-hero__grid_container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 1200px;
+  margin: 160px auto 0;
+  padding: 0 20px;
+}
+
+.fetchly-hero__grid_card {
+  height: 183px;
+  padding: 24px;
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,0.35);
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(10px);
+  color: #F2E5D4;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;   
+  text-align: center;   
+}
+
+.fetchly-hero__grid_icon {
+  margin-bottom: 12px;
+  width:48px;
+  height:48px;
+}
+
+.fetchly-hero__grid_title {
+  margin: 0 0 6px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.fetchly-hero__grid_text {
+  margin: 0;
+  font-size: 14px;
+  opacity: 0.9;
+}
+
 .fetchly-hero {
   position: relative;
   width: 100%;
-  min-height: 80vh;
+  height: 1079px;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  
 }
 
 .fetchly-hero__bg {
@@ -74,9 +156,9 @@
   position: relative;
   z-index: 2;
   text-align: center;
-  max-width: 700px;
+  max-width: 100%;
   padding: 20px;
-  color: #fff;
+  color: #F2E5D4;
 }
 
 .fetchly-hero__eyebrow {
@@ -99,22 +181,132 @@
 .fetchly-hero__button {
   display: inline-block;
   padding: 12px 26px;
-  border: 1px solid #fff;
+  border: 1px solid #F2E5D4;
   border-radius: 30px;
-  color: #fff;
+  color: #F2E5D4;
   text-decoration: none;
   transition: all .2s ease;
 }
 
 .fetchly-hero__button:hover {
-  background: #fff;
+  background: #F2E5D4;
   color: #000;
 }
 
 @media (max-width: 768px) {
   .fetchly-hero__heading {
     font-size: 30px;
+    
   }
+
+  .fetchly-hero {
+    min-height: auto;
+    display: block;
+    background: #f6efe7;
+  }
+
+  
+  .fetchly-hero__bg {
+    position: relative;
+    inset: auto;
+    height: 355px;           
+    overflow: hidden;
+  }
+
+  .fetchly-hero__video,
+  .fetchly-hero__image {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+  }
+
+ 
+  .fetchly-hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.35);
+
+  }
+
+  .fetchly-hero__content {
+    position: relative;
+    z-index: 2;
+    max-width: 520px;
+    margin: 0 auto;
+    padding: 26px 18px 18px;
+    color: #391212;     
+    text-align: center;
+  }
+
+
+  .fetchly-hero__eyebrow {
+    color: #391212;
+    opacity: 0.9;
+    font-size:16px;
+  }
+
+  .fetchly-hero__heading {
+    font-size: 42px;
+    line-height: 1.08;
+    margin-bottom: 12px;
+    color: #391212;
+    margin-right:40px;
+    margin-left:40px;
+
+  }
+
+  .fetchly-hero__text {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 28px;
+    color: #391212;
+    opacity: 0.9;
+    margin-right:40px;
+    margin-left:40px;
+  }
+
+
+  .fetchly-hero__button {
+    border-color: rgba(43, 27, 19, 0.55);
+    color: #391212;
+    background: transparent;
+    margin-bottom: 56px;
+
+  }
+  .fetchly-hero__button:hover {
+    background: #391212;
+    color: #fff;
+  }
+
+  .fetchly-hero__grid_container {
+    position: relative;      
+    bottom: auto;
+    left: auto;
+    transform: none;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+    max-width: 520px;
+    margin: 10px auto 26px;
+    padding: 0 18px 18px;
+  }
+
+  .fetchly-hero__grid_card {
+    height: 150px;
+    padding: 18px;
+    border-radius: 16px;
+    background: rgba(255,255,255,0.55);
+    border: 1px solid rgba(255,255,255,1);
+    backdrop-filter: blur(10px);
+    color: #391212;
+    align-items: center;
+    text-align: center;
+  }
+
+  .fetchly-hero__grid_icon img {
+    filter: none;
+  }
+
 }
 </style>
 
@@ -143,7 +335,7 @@
       "type": "textarea",
       "id": "text",
       "label": "Description",
-      "default": "Fashion that demands attention and refuses to fade."
+      "default": "Fashion that demands attention and refuses to fade. We build pieces for those who know </br> what they want and won't settle for less."
     },
     {
       "type": "text",
