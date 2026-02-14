@@ -1,0 +1,344 @@
+{% assign p = product %}
+{% assign v = p.selected_or_first_available_variant %}
+{% assign rating = rating_value | default: 41 | divided_by: 10.0 %}
+{% assign count = rating_count | default: 0 %}
+
+<div class="fetchly-card" data-fetchly-card>
+  <a class="fetchly-card__media" href="{{ p.url }}">
+    {% if p.featured_image %}
+    <img
+      data-fetchly-img
+      src="{{ p.featured_image | image_url: width: 900 }}"
+      alt="{{ p.featured_image.alt | escape }}"
+      loading="lazy"
+    >
+    {% endif %}
+  </a>
+
+  <div class="fetchly-card__row">
+    <div class="fetchly-card__swatches" aria-label="Colors" data-fetchly-swatches>
+      {% assign color_option = nil %}
+      {% for opt in p.options_with_values %}
+        {% assign opt_name = opt.name | downcase %}
+        {% if opt_name == 'color' or opt_name == 'colour' %}
+          {% assign color_option = opt %}
+          {% break %}
+        {% endif %}
+      {% endfor %}
+
+      {% if color_option %}
+        {% assign total_colors = color_option.values.size %}
+        {% assign show_max = 4 %}
+        {% assign pos = color_option.position %}
+
+        {% for val in color_option.values limit: show_max %}
+          {% assign is_active = false %}
+          {% if pos == 1 and v.option1 == val %}{% assign is_active = true %}{% endif %}
+          {% if pos == 2 and v.option2 == val %}{% assign is_active = true %}{% endif %}
+          {% if pos == 3 and v.option3 == val %}{% assign is_active = true %}{% endif %}
+
+          <button
+            type="button"
+            class="fetchly-swatch{% if is_active %} is-active{% endif %}"
+            title="{{ val | escape }}"
+            aria-label="{{ val | escape }}"
+            data-fetchly-swatch
+            data-color-value="{{ val | escape }}"
+          >
+            <span class="fetchly-swatch__dot" data-color-name="{{ val | escape }}"></span>
+          </button>
+        {% endfor %}
+
+        {% if total_colors > show_max %}
+          <span class="fetchly-swatch-more">+{{ total_colors | minus: show_max }}</span>
+        {% endif %}
+      {% endif %}
+    </div>
+
+    <button class="fetchly-card__wish" type="button" aria-label="Add to wishlist">♡</button>
+  </div>
+
+  <div class="fetchly-card__meta">
+    <div>
+      <p class="fetchly-card__title">{{ p.title }}</p>
+      <p class="fetchly-card__vendor">{{ p.vendor }}</p>
+    </div>
+
+    <div class="fetchly-card__rating" aria-label="Rating {{ rating }} out of 5">
+      {% render 'fetchly-stars', rating: rating %}
+      <span class="fetchly-card__rating-text">{{ rating }}{% if count > 0 %} ({{ count }}){% endif %}</span>
+    </div>
+  </div>
+
+  <p class="fetchly-card__price" data-fetchly-price>{{ v.price | money }}</p>
+
+  <form class="fetchly-card__form">
+    <input type="hidden" name="id" value="{{ v.id }}">
+    <button
+      class="fetchly-card__atc"
+      type="button"
+      data-fetchly-atc
+      {% unless v.available %}disabled{% endunless %}
+    >
+      {% if v.available %}Add to cart{% else %}Sold out{% endif %}
+    </button>
+  </form>
+
+  <script type="application/json" data-fetchly-variants>{{ p.variants | json }}</script>
+  <script type="application/json" data-fetchly-selected-options>{{ v.options | json }}</script>
+  <script type="application/json" data-fetchly-color-position>{{ color_option.position | default: 1 | json }}</script>
+
+  <script type="application/json" data-fetchly-variant-map>
+[
+  {% for vv in p.variants %}
+    {
+      "id": {{ vv.id | json }},
+      "available": {{ vv.available | json }},
+      "price": {{ vv.price | json }},
+      "img": {% if vv.image %}{{ vv.image | image_url: width: 900 | json }}{% elsif vv.featured_image %}{{ vv.featured_image | image_url: width: 900 | json }}{% else %}{{ p.featured_image | image_url: width: 900 | json }}{% endif %}
+    }{% unless forloop.last %},{% endunless %}
+  {% endfor %}
+]
+</script>
+</div>
+
+<style>
+.fetchly-card__media {
+  display: block;
+  border-radius: 18px;
+  overflow: hidden;
+  background: rgba(0,0,0,.04);
+}
+
+.fetchly-card__media img {
+  width: 100%;
+  height: 420px;
+  object-fit: contain;
+  display: block;
+}
+
+.fetchly-card__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.fetchly-card__swatches {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.fetchly-swatch {
+  border: 0;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  display: inline-flex;
+}
+
+.fetchly-swatch__dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+  display: inline-block;
+  border: 1px solid rgba(0,0,0,.18);
+  box-shadow: 0 0 0 2px rgba(255,255,255,.7) inset;
+  background: #ddd;
+}
+
+.fetchly-swatch.is-active .fetchly-swatch__dot {
+  outline: 2px solid rgba(0,0,0,.85);
+  outline-offset: 2px;
+}
+
+.fetchly-swatch-more {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 12px;
+  padding: 0 8px;
+  border-radius: 999px;
+  font-size: 11px;
+  line-height: 1;
+  border: 1px solid rgba(0,0,0,.18);
+  background: rgba(0,0,0,.06);
+}
+
+.fetchly-card__wish {
+  border: 0;
+  background: transparent;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.fetchly-card__meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 14px;
+  margin-top: 10px;
+  color: #391212;
+}
+
+.fetchly-card__title {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #391212;
+}
+
+.fetchly-card__vendor {
+  margin: 4px 0 0;
+  font-size: 12px;
+  opacity: 0.7;
+  color: #391212;
+}
+
+.fetchly-card__rating {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  white-space: nowrap;
+  color: #F4A700;
+}
+
+.fetchly-card__rating-text {
+  color: #391212;
+}
+
+.fetchly-card__price {
+  margin: 10px 0 12px;
+  font-weight: 600;
+}
+
+.fetchly-card__atc {
+  width: 100%;
+  font-size: 15px;
+  border-radius: 999px;
+  padding: 12px 16px;
+  border: 1px solid rgba(0,0,0,0.35);
+  background: transparent;
+  cursor: pointer;
+  color: #391212;
+}
+
+.fetchly-card__atc:disabled {
+  opacity: .6;
+  cursor: not-allowed;
+}
+
+@media (max-width: 560px) {
+  .fetchly-card__media img { height: 360px; }
+}
+</style>
+
+<script>
+(() => {
+  const stableColorFromString = (str) => {
+    let h = 0;
+    for (let i = 0; i < str.length; i++) h = ((h << 5) - h + str.charCodeAt(i)) | 0;
+    const hue = Math.abs(h) % 360;
+    return `hsl(${hue} 45% 55%)`;
+  };
+
+  const paint = (root) => {
+    root.querySelectorAll('.fetchly-swatch__dot[data-color-name]').forEach((dot) => {
+      const name = (dot.getAttribute('data-color-name') || '').trim();
+      if (!name) return;
+      dot.style.background = name;
+      const test = getComputedStyle(dot).backgroundColor;
+      if (!test || test === 'rgba(0, 0, 0, 0)' || test === 'transparent') {
+        dot.style.background = stableColorFromString(name.toLowerCase());
+      }
+    });
+  };
+
+  const findVariantByOptions = (variants, options) => {
+    return variants.find(v => {
+      if (!v || !Array.isArray(v.options)) return false;
+      if (v.options.length !== options.length) return false;
+      for (let i = 0; i < options.length; i++) {
+        if ((v.options[i] || '') !== (options[i] || '')) return false;
+      }
+      return true;
+    }) || null;
+  };
+
+  const pickVariantForColor = (variants, currentOptions, colorIndex, colorValue) => {
+    const nextOptions = currentOptions.slice();
+    nextOptions[colorIndex] = colorValue;
+
+    const exact = findVariantByOptions(variants, nextOptions);
+    if (exact && exact.available) return exact;
+
+    const any = variants.find(v => v && v.available && Array.isArray(v.options) && (v.options[colorIndex] || '') === colorValue);
+    return any || exact || null;
+  };
+
+  const onClick = (e) => {
+    const btn = e.target.closest('[data-fetchly-swatch]');
+    if (!btn) return;
+
+    const card = btn.closest('[data-fetchly-card]');
+    if (!card) return;
+
+    const variantsEl = card.querySelector('[data-fetchly-variants]');
+    const selectedEl = card.querySelector('[data-fetchly-selected-options]');
+    const posEl = card.querySelector('[data-fetchly-color-position]');
+    if (!variantsEl || !selectedEl || !posEl) return;
+
+    const variants = JSON.parse(variantsEl.textContent || '[]');
+    const selectedOptions = JSON.parse(selectedEl.textContent || '[]');
+    const colorPos = Number(JSON.parse(posEl.textContent || '1')) || 1;
+    const colorIndex = Math.max(0, Math.min(2, colorPos - 1));
+
+    const colorValue = btn.getAttribute('data-color-value') || '';
+    if (!colorValue) return;
+
+    const next = pickVariantForColor(variants, selectedOptions, colorIndex, colorValue);
+    if (!next) return;
+
+    selectedEl.textContent = JSON.stringify(next.options);
+
+    const idInput = card.querySelector('input[name="id"]');
+    if (idInput) idInput.value = String(next.id);
+
+    const mapEl = card.querySelector('[data-fetchly-variant-map]');
+    if (mapEl) {
+      const map = JSON.parse(mapEl.textContent || '[]');
+      const info = map.find(x => Number(x.id) === Number(next.id));
+      if (info) {
+        const img = card.querySelector('[data-fetchly-img]');
+        if (img && info.img) {
+          img.setAttribute('src', info.img);
+          img.src = info.img;
+          img.removeAttribute('srcset');
+        }
+
+        const priceEl = card.querySelector('[data-fetchly-price]');
+        if (priceEl) {
+          const fmt = (window.theme && window.theme.moneyFormat) ? window.theme.moneyFormat : "{{ shop.money_format }}";
+          if (typeof Shopify !== 'undefined' && Shopify.formatMoney) {
+            priceEl.textContent = Shopify.formatMoney(Number(info.price), fmt);
+          } else {
+            priceEl.textContent = (Number(info.price) / 100).toFixed(2);
+          }
+        }
+      }
+    }
+
+    card.querySelectorAll('[data-fetchly-swatch]').forEach((b) => {
+      b.classList.toggle('is-active', b === btn);
+    });
+
+    const atc = card.querySelector('[data-fetchly-atc]');
+    if (atc) atc.toggleAttribute('disabled', !next.available);
+  };
+
+  document.addEventListener('click', onClick);
+  paint(document);
+})();
+</script>

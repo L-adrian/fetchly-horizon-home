@@ -1,0 +1,25 @@
+{% assign r = rating | default: 0 %}
+{% assign full = r | floor %}
+{% assign has_half = r | minus: full %}
+{% assign half = 0 %}
+{% if has_half >= 0.5 %}{% assign half = 1 %}{% endif %}
+{% assign next_after_full = full | plus: 1 %}
+
+<span class="fetchly-stars" aria-hidden="true">
+  {% for i in (1..5) %}
+    {% if i <= full %}
+      <span class="star is-full">★</span>
+    {% elsif half == 1 and i == next_after_full %}
+      <span class="star is-half">★</span>
+    {% else %}
+      <span class="star">★</span>
+    {% endif %}
+  {% endfor %}
+</span>
+
+<style>
+.fetchly-stars { display:inline-flex; gap:2px; line-height:1; }
+.fetchly-stars .star { font-size: 12px; opacity: .25; }
+.fetchly-stars .star.is-full { opacity: 1; }
+.fetchly-stars .star.is-half { opacity: .6; }
+</style>
