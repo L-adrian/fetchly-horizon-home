@@ -15,9 +15,112 @@
       "settings": {
         "eyebrow": "UNCOMPROMISING",
         "heading": "Pieces built for those who lead",
-        "text": "Fashion that demands attention and refuses to fade. We build pieces for those who know what they want and won't settle for less.",
+        "text": "Fashion that demands attention and refuses to fade. We build pieces for those who know <br>  what they want and won't settle for less.",
         "button_label": "Shop now",
         "button_link": ""
+      }
+    },
+    "fetchly_designer_slider_Xnktpt": {
+      "type": "fetchly-designer-slider",
+      "blocks": {
+        "slide_t4EYXR": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/slider-image.jpg",
+            "label": "DESIGNER 1",
+            "link": ""
+          }
+        },
+        "slide_cbB4X4": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/slider-image.jpg",
+            "label": "DESIGNER 1",
+            "link": ""
+          }
+        },
+        "slide_RjYCJp": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/slider-image.jpg",
+            "label": "DESIGNER 1",
+            "link": ""
+          }
+        },
+        "slide_VxgCyG": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/slider-image.jpg",
+            "label": "DESIGNER 1",
+            "link": ""
+          }
+        },
+        "slide_wke9PB": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/slider-image.jpg",
+            "label": "DESIGNER 1",
+            "link": ""
+          }
+        },
+        "slide_KdHLUN": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/slider-image.jpg",
+            "label": "DESIGNER 1",
+            "link": ""
+          }
+        },
+        "slide_Jzpjtb": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/slider-image.jpg",
+            "label": "DESIGNER 1",
+            "link": ""
+          }
+        },
+        "slide_kCzTYY": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/slider-image.jpg",
+            "label": "DESIGNER 1",
+            "link": ""
+          }
+        },
+        "slide_9BMNDj": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/slider-image.jpg",
+            "label": "DESIGNER 1",
+            "link": ""
+          }
+        },
+        "slide_bU8hkD": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/slider-image.jpg",
+            "label": "DESIGNER 1",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "slide_t4EYXR",
+        "slide_cbB4X4",
+        "slide_RjYCJp",
+        "slide_VxgCyG",
+        "slide_wke9PB",
+        "slide_KdHLUN",
+        "slide_Jzpjtb",
+        "slide_kCzTYY",
+        "slide_9BMNDj",
+        "slide_bU8hkD"
+      ],
+      "name": "Fetchly Designer Slider",
+      "settings": {
+        "heading": "",
+        "aria_label": "Designer slider",
+        "show_dots": true
       }
     },
     "hero_jVaWmY": {
@@ -298,6 +401,7 @@
   },
   "order": [
     "fetchly_hero_i8DpdT",
+    "fetchly_designer_slider_Xnktpt",
     "hero_jVaWmY",
     "product_list_fa6P9H"
   ]
