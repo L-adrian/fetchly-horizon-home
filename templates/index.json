@@ -158,12 +158,54 @@
         "copyright_text": "© 2024 Relume. All rights reserved.",
         "legal_menu": "policy-menu"
       }
+    },
+    "fetchly_membership_6DiGnd": {
+      "type": "fetchly-membership",
+      "blocks": {
+        "perk_mGKNUt": {
+          "type": "perk",
+          "settings": {
+            "icon": "shopify://shop_images/Truck.png",
+            "text": "Free shipping on all orders above"
+          }
+        },
+        "perk_BqJExr": {
+          "type": "perk",
+          "settings": {
+            "icon": "shopify://shop_images/release_alert.png",
+            "text": "Early Access to new collections"
+          }
+        },
+        "perk_dQ8PiA": {
+          "type": "perk",
+          "settings": {
+            "icon": "shopify://shop_images/Trophy.png",
+            "text": "Earn points on each order"
+          }
+        }
+      },
+      "block_order": [
+        "perk_mGKNUt",
+        "perk_BqJExr",
+        "perk_dQ8PiA"
+      ],
+      "name": "Fetchly Membership",
+      "settings": {
+        "eyebrow": "MEMBERSHIP",
+        "title": "Join those who dress with intention",
+        "description": "Join Brave Rose rewards and unlock special perks with every purchase",
+        "default_icon_url": "https://example.com/icon.png",
+        "arrow_icon_url": "https://cdn.shopify.com/s/files/1/0797/2873/8528/files/Vector.png?v=1771102474",
+        "button_text": "Sign up",
+        "button_link": ""
+      }
     }
   },
   "order": [
     "fetchly_hero_i8DpdT",
     "fetchly_designer_slider_Xnktpt",
     "fetchly_new_arrivals_xfR8yC",
-    "fetchly_footer_pB3D4y"
+    "fetchly_footer_pB3D4y",
+    "fetchly_membership_6DiGnd"
   ]
 }

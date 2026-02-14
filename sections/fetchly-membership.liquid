@@ -1,0 +1,228 @@
+<section class="fetchly-membership" aria-label="Membership">
+  <div class="fetchly-membership__inner">
+    <div class="fetchly-membership__left">
+      {% if section.settings.eyebrow != blank %}
+        <p class="fetchly-membership__eyebrow">{{ section.settings.eyebrow }}</p>
+      {% endif %}
+      {% if section.settings.title != blank %}
+        <h2 class="fetchly-membership__title">{{ section.settings.title }}</h2>
+      {% endif %}
+    </div>
+
+    <div class="fetchly-membership__right">
+      {% if section.settings.description != blank %}
+        <p class="fetchly-membership__desc">{{ section.settings.description }}</p>
+      {% endif %}
+
+    <ul class="fetchly-membership__perks">
+    {% for block in section.blocks %}
+        <li class="fetchly-membership__perk" {{ block.shopify_attributes }}>
+        {% if block.settings.icon %}
+            <img
+            class="fetchly-membership__icon"
+            src="{{ block.settings.icon | image_url: width: 32 }}"
+            alt=""
+            loading="lazy"
+            >
+        {% endif %}
+        <span class="fetchly-membership__perk-text">{{ block.settings.text }}</span>
+        </li>
+    {% endfor %}
+    </ul>
+
+      {% if section.settings.button_text != blank %}
+        <a class="fetchly-membership__btn" href="{{ section.settings.button_link }}">
+          <span class="fetchly-membership__btn-text">{{ section.settings.button_text }}</span>
+          {% if section.settings.arrow_icon_url != blank %}
+            <img class="fetchly-membership__btn-icon" src="{{ section.settings.arrow_icon_url }}" alt="" loading="lazy">
+          {% else %}
+            <span class="fetchly-membership__btn-arrow">›</span>
+          {% endif %}
+        </a>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+<style>
+.fetchly-membership{
+  background:#3a0b0b;
+  color:#f6f0ea;
+  padding:90px 0;
+}
+
+.fetchly-membership__inner{
+  max-width:1200px;
+  margin:0 auto;
+  padding:0 34px;
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:70px;
+  align-items:start;
+}
+
+.fetchly-membership__eyebrow{
+  margin:0 0 14px;
+  font-size:12px;
+  letter-spacing:.14em;
+  opacity:.9;
+}
+
+.fetchly-membership__title{
+  margin:0;
+  font-size:56px;
+  line-height:1.03;
+  font-weight:600;
+}
+
+.fetchly-membership__right{
+  padding-top:6px;
+}
+
+.fetchly-membership__desc{
+  margin:0 0 22px;
+  font-size:15px;
+  line-height:1.55;
+  opacity:.9;
+  max-width:520px;
+}
+
+.fetchly-membership__perks{
+  list-style:none;
+  padding:0;
+  margin:0 0 28px;
+  display:grid;
+  gap:14px;
+}
+
+.fetchly-membership__perk{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  font-size:13px;
+  line-height:1.45;
+  opacity:.95;
+}
+
+.fetchly-membership__icon{
+  width:16px;
+  height:16px;
+  object-fit:contain;
+  opacity:.9;
+  flex:0 0 auto;
+}
+
+.fetchly-membership__btn{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:12px 18px;
+  border-radius:999px;
+  background:rgba(255,255,255,.12);
+  color:#f6f0ea;
+  text-decoration:none;
+  border:1px solid rgba(255,255,255,.14);
+  font-size:13px;
+}
+
+.fetchly-membership__btn:hover{
+  background:rgba(255,255,255,.18);
+}
+
+.fetchly-membership__btn-icon{
+  width:14px;
+  height:14px;
+  object-fit:contain;
+  opacity:.95;
+}
+
+.fetchly-membership__btn-arrow{
+  font-size:18px;
+  line-height:1;
+  opacity:.95;
+  transform: translateY(-1px);
+}
+
+/* Responsive (como tu 2da imagen) */
+@media (max-width: 900px){
+  .fetchly-membership{
+    padding:70px 0;
+  }
+  .fetchly-membership__inner{
+    grid-template-columns:1fr;
+    gap:28px;
+    padding:0 22px;
+  }
+  .fetchly-membership__right{
+    padding-top:0;
+  }
+  .fetchly-membership__title{
+    font-size:44px;
+    padding-right: 200px;
+  }
+  .fetchly-membership__desc{
+    margin-top:8px;
+    max-width:560px;
+  }
+  .fetchly-membership__btn{
+    padding:14px 20px;
+  }
+}
+
+@media (max-width: 560px){
+  .fetchly-membership{
+    padding:64px 0;
+  }
+  .fetchly-membership__title{
+    font-size:46px;
+    line-height:1.02;
+  }
+  .fetchly-membership__desc{
+    font-size:14px;
+  }
+  .fetchly-membership__perk{
+    font-size:13px;
+  }
+  .fetchly-membership__icon{
+    width:18px;
+    height:18px;
+  }
+}
+</style>
+
+{% schema %}
+{
+  "name": "Fetchly Membership",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "MEMBERSHIP" },
+    { "type": "text", "id": "title", "label": "Title", "default": "Join those who dress with intention" },
+    { "type": "textarea", "id": "description", "label": "Description", "default": "Join Brave Rose rewards and unlock special perks with every purchase" },
+
+    { "type": "text", "id": "default_icon_url", "label": "Default perk icon URL", "default": "https://example.com/icon.png" },
+    { "type": "text", "id": "arrow_icon_url", "label": "Button arrow icon URL (optional)", "default": "https://example.com/arrow.png" },
+
+    { "type": "text", "id": "button_text", "label": "Button text", "default": "Sign up" },
+    { "type": "url", "id": "button_link", "label": "Button link" }
+  ],
+"blocks": [
+  {
+    "type": "perk",
+    "name": "Perk",
+    "settings": [
+      { "type": "image_picker", "id": "icon", "label": "Icon (from Figma)" },
+      { "type": "text", "id": "text", "label": "Text", "default": "Free shipping on all orders above $$" }
+    ]
+  }
+],
+    "presets": [
+    {
+        "name": "Fetchly Membership",
+        "blocks": [
+        { "type": "perk" },
+        { "type": "perk" },
+        { "type": "perk" }
+        ]
+    }
+    ]
+}
+{% endschema %}
