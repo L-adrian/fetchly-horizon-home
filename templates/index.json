@@ -199,13 +199,51 @@
         "button_text": "Sign up",
         "button_link": ""
       }
+    },
+    "fetchly_lookbook_xXRDhQ": {
+      "type": "fetchly-lookbook",
+      "blocks": {
+        "image_c6gDjW": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/3490b0a96f57b43218d309e4ef80ce03eca1dd5c.png"
+          }
+        },
+        "image_RTQK6A": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/57e2ff9407150bd4dc428de40fb230071de0778d.png"
+          }
+        },
+        "image_mGLym8": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Placeholder_Image.png"
+          }
+        },
+        "image_Kf7L4f": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/f64de4e2b554223b99c9c6775ea9962727aef799.png"
+          }
+        }
+      },
+      "block_order": [
+        "image_c6gDjW",
+        "image_RTQK6A",
+        "image_mGLym8",
+        "image_Kf7L4f"
+      ],
+      "name": "Fetchly Lookbook",
+      "settings": {}
     }
   },
   "order": [
     "fetchly_hero_i8DpdT",
     "fetchly_designer_slider_Xnktpt",
     "fetchly_new_arrivals_xfR8yC",
-    "fetchly_footer_pB3D4y",
-    "fetchly_membership_6DiGnd"
+    "fetchly_lookbook_xXRDhQ",
+    "fetchly_membership_6DiGnd",
+    "fetchly_footer_pB3D4y"
   ]
 }
