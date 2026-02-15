@@ -59,47 +59,53 @@
 }
 
 @media (max-width: 900px){
-  .fetchly-lookbook__grid{
-    grid-template-columns:repeat(2, 1fr);
-    grid-template-rows:repeat(1, 1fr);
-  }
-
-  .fetchly-lookbook__item{
-    height:auto;
-    min-height:240px;
-  }
-
-  .fetchly-lookbook__item--1{
-    grid-column:1;
-    grid-row:1;
-    min-height:320px;
-  }
-
-  .fetchly-lookbook__item--2{
-    grid-column:2;
-    grid-row:1;
-    min-height:220px;
-  }
-
-  .fetchly-lookbook__item--3{
-    grid-column:1;
-    grid-row:2;
-    min-height:280px;
-  }
-
-  .fetchly-lookbook__item--4{
-    grid-column:2;
-    grid-row:2;
-    min-height:380px;
-  }
+ .fetchly-lookbook{
+  background:#f6f0ea;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden; /* evita scroll horizontal si alguna imagen se pasa */
 }
 
-@media (max-width: 560px){
-  .fetchly-lookbook__item--1{ min-height:320px; }
-  .fetchly-lookbook__item--2{ min-height:220px; }
-  .fetchly-lookbook__item--3{ min-height:280px; }
-  .fetchly-lookbook__item--4{ min-height:380px; }
+.fetchly-lookbook__grid{
+  display:grid;
+  grid-template-columns:repeat(2, minmax(0, 1fr)); /* 2 por fila siempre */
+  gap:0;
+  width: 100%;
+  max-width: 100%;
 }
+
+.fetchly-lookbook__item{
+  position:relative;
+  overflow:hidden;
+  aspect-ratio: 3 / 4; /* todas iguales */
+}
+
+.fetchly-lookbook__img,
+.fetchly-lookbook__placeholder{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+}
+
+.fetchly-lookbook__img{
+  object-fit:cover;
+  display:block;
+  max-width: 100%;
+  transition:transform .4s ease;
+}
+
+.fetchly-lookbook__item:hover .fetchly-lookbook__img{
+  transform:scale(1.05);
+}
+
+.fetchly-lookbook__placeholder{
+  background:rgba(0,0,0,.06);
+}
+
+}
+
+
 </style>
 
 {% schema %}

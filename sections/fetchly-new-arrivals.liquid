@@ -18,38 +18,38 @@
     {% if col == blank %}
       <p class="fetchly-arrivals__empty">Select a collection in section settings.</p>
     {% else %}
-    <div class="fetchly-arrivals__grid">
-    {% assign limit = section.settings.products_limit | default: 6 %}
-    {% assign shown = 0 %}
+    <div class="fetchly-arrivals__grid"  data-fetchly-slider>
+        {% assign limit = section.settings.products_limit | default: 6 %}
+        {% assign shown = 0 %}
 
-    {% for product in col.products limit: limit %}
-        {% render 'fetchly-product-card',
-        product: product,
-        rating_value: section.settings.rating_value,
-        rating_count: section.settings.rating_count
-        %}
-        {% assign shown = shown | plus: 1 %}
-    {% endfor %}
-
-    {% if shown == 0 and col.products.size > 0 %}
-        {% assign shown = 1 %}
-    {% endif %}
-
-    {% if col.products.size > 0 %}
-        {% assign remaining = limit | minus: shown %}
-        {% if remaining > 0 %}
-        {% assign p0 = col.products.first %}
-        {% for i in (1..remaining) %}
+        {% for product in col.products limit: limit %}
             {% render 'fetchly-product-card',
-            product: p0,
+            product: product,
             rating_value: section.settings.rating_value,
             rating_count: section.settings.rating_count
             %}
+            {% assign shown = shown | plus: 1 %}
         {% endfor %}
-        {% endif %}
-    {% endif %}
-    </div>
 
+        {% if shown == 0 and col.products.size > 0 %}
+            {% assign shown = 1 %}
+        {% endif %}
+
+        {% if col.products.size > 0 %}
+            {% assign remaining = limit | minus: shown %}
+            {% if remaining > 0 %}
+                {% assign p0 = col.products.first %}
+                {% for i in (1..remaining) %}
+                    {% render 'fetchly-product-card',
+                    product: p0,
+                    rating_value: section.settings.rating_value,
+                    rating_count: section.settings.rating_count
+                    %}
+                {% endfor %}
+            {% endif %}
+        {% endif %}
+    </div>
+    <div class="fetchly-arrivals__dots" data-fetchly-dots aria-hidden="true"></div>
     {% endif %}
   </div>
 </section>
@@ -132,6 +132,31 @@
   .fetchly-arrivals__grid > * {
     scroll-snap-align: start;
     min-width: 0;
+  }
+    /* ocultar scrollbar */
+  .fetchly-arrivals__grid::-webkit-scrollbar { display: none; }
+  .fetchly-arrivals__grid { scrollbar-width: none; }
+
+  /* dots */
+  .fetchly-arrivals__dots{
+    display:flex;
+    justify-content:center;
+    gap:8px;
+    margin-top:14px;
+  }
+  .fetchly-arrivals__dots button{
+    width:8px;
+    height:8px;
+    border-radius:999px;
+    border:0;
+    padding:0;
+    background: rgba(57,18,18,.25); /* tu color base */
+    cursor:pointer;
+    transition: transform .2s ease, background .2s ease;
+  }
+  .fetchly-arrivals__dots button.is-active{
+    background: rgba(57,18,18,.85);
+    transform: scale(1.35);
   }
 }
 
