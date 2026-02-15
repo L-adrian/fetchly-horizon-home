@@ -41,34 +41,34 @@
         {{ section.settings.button_label }}
       </a>
     {% endif %}
+    {% if section.blocks.size > 0 %}
     <div class="fetchly-hero__grid_container">
-        <!-- Card 1 -->
-        <div class="fetchly-hero__grid_card">
+        {% for block in section.blocks %}
+        <div class="fetchly-hero__grid_card" {{ block.shopify_attributes }}>
+            {% if block.settings.icon != blank %}
             <div class="fetchly-hero__grid_icon">
-            <img src="{{ 'icon-store-managed.png' | asset_url }}" alt="US based storage" width="48" height="48">
+                <img
+                src="{{ block.settings.icon | image_url: width: 96 }}"
+                alt="{{ block.settings.title | escape }}"
+                width="48"
+                height="48"
+                loading="lazy"
+                >
             </div>
-            <h4 class="fetchly-hero__grid_title">US based storage</h4>
-            <p class="fetchly-hero__grid_text">Fast and reliable delivery.</p>
-        </div>
+            {% endif %}
 
-        <!-- Card 2 -->
-        <div class="fetchly-hero__grid_card">
-            <div class="fetchly-hero__grid_icon">
-            <img src="{{ 'icon-store-managed.png' | asset_url }}" alt="US based storage" width="48" height="48">
-            </div>
-            <h4 class="fetchly-hero__grid_title">40+ designers</h4>
-            <p class="fetchly-hero__grid_text">Explore our selection of African fashion designers.</p>
-        </div>
+            {% if block.settings.title != blank %}
+            <h4 class="fetchly-hero__grid_title">{{ block.settings.title }}</h4>
+            {% endif %}
 
-        <!-- Card 3 -->
-        <div class="fetchly-hero__grid_card">
-            <div class="fetchly-hero__grid_icon">
-            <img src="{{ 'icon-store-managed.png' | asset_url }}" alt="US based storage" width="48" height="48">
-            </div>
-            <h4 class="fetchly-hero__grid_title">Earn points with every order</h4>
-            <p class="fetchly-hero__grid_text">Join our loyalty program and get bonus points.</p>
+            {% if block.settings.text != blank %}
+            <p class="fetchly-hero__grid_text">{{ block.settings.text }}</p>
+            {% endif %}
         </div>
+        {% endfor %}
     </div>
+    {% endif %}
+
   </div>
   
 </section>
@@ -314,6 +314,7 @@
 {% schema %}
 {
   "name": "Fetchly Hero",
+  "max_blocks": 3,
   "settings": [
     {
       "type": "image_picker",
@@ -350,10 +351,27 @@
       "label": "Button link"
     }
   ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Feature card",
+      "settings": [
+        { "type": "image_picker", "id": "icon", "label": "Icon" },
+        { "type": "text", "id": "title", "label": "Title", "default": "US based storage" },
+        { "type": "text", "id": "text", "label": "Text", "default": "Fast and reliable delivery." }
+      ]
+    }
+  ],
   "presets": [
     {
-      "name": "Fetchly Hero"
+      "name": "Fetchly Hero",
+      "blocks": [
+        { "type": "feature" },
+        { "type": "feature" },
+        { "type": "feature" }
+      ]
     }
   ]
 }
 {% endschema %}
+
