@@ -135,7 +135,11 @@
 .fetchly-dot.is-active {
   background: rgba(0,0,0,0.7);
 }
-
+@media (max-width: 900px) {
+    .fetchly-slide__label {
+    padding: 8px 18dvh;
+  }
+}
 @media (max-width: 768px) {
   .fetchly-slider { padding: 28px 0; }
   .fetchly-slider__track {
@@ -162,9 +166,10 @@
     height: 150px;
   }
   .fetchly-slide__label {
-    padding: 8px 19dvh;
+    padding: 8px 14dvh;
   }
 } 
+
 </style>
 
 <script>

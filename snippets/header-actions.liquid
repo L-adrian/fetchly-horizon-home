@@ -76,7 +76,13 @@
       </dialog>
     </dialog-component>
   {% endif %}
-
+<a
+  href="/pages/wishlist"
+  class="button-unstyled header-actions__action header-actions__wishlist"
+  aria-label="Wishlist"
+>
+  <span class="wishlist-heart">♡</span>
+</a>
   {% if settings.cart_type == 'drawer' and template.name != 'cart' %}
     <script
       src="{{ 'cart-drawer.js' | asset_url }}"

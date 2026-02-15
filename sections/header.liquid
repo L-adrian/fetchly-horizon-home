@@ -981,6 +981,41 @@
   .header__column .localization-form__select {
     background-color: var(--header-bg-color);
   }
+
+.header__column--right{
+  gap: 18px;
+}
+
+.header-actions__action{
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+  border: 1px solid rgba(255,255,255,.65);
+  background: transparent;
+  padding: 0;
+}
+
+.header-actions__action .svg-wrapper{
+  height: 18px;
+  width: 18px;
+}
+
+.header-actions__action .svg-wrapper svg{
+  width: 18px;
+  height: 18px;
+}
+
+/* account button filled circle */
+.account-button.header-actions__action{
+  background: rgba(246,240,234,.92);
+  border-color: rgba(246,240,234,.92);
+  color: #3a0b0b;
+}
+
 {% endstylesheet %}
 
 {% unless request.design_mode %}

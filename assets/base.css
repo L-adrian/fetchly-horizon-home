@@ -167,6 +167,60 @@ select {
   will-change: auto;
 }
 
+.header a[aria-haspopup="true"],
+.header button[aria-haspopup="true"]{
+  position: relative;
+  padding-right: 14px;
+}
+
+.header a[aria-haspopup="true"]::after,
+.header button[aria-haspopup="true"]::after{
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 10px;
+  height: 10px;
+  transform: translateY(-45%);
+  opacity: .85;
+  background: currentColor;
+  clip-path: polygon(18% 35%, 50% 67%, 82% 35%, 72% 25%, 50% 45%, 28% 25%);
+}
+
+.menu-list__link-title{
+  color: inherit;
+}
+
+/* Make SALE red (works regardless of URL) */
+.menu-list__link-title{
+  color: inherit;
+}
+
+.menu-list__link-title{
+  font-weight: inherit;
+}
+
+.menu-list__link-title{
+  text-decoration: none;
+}
+
+.menu-list__link-title{
+  display: inline-block;
+}
+
+.menu-list__link-title{
+  vertical-align: middle;
+}
+
+.menu-list__link .menu-list__link-title{
+  color: inherit;
+}
+
+.menu-list__link[href="/collections/all"] .menu-list__link-title{
+  color: #ff3b30;
+  font-weight: 700;
+}
+
 @media (any-pointer: fine) and (prefers-reduced-motion: no-preference) {
   .card-hover-effect-lift .product-card:hover,
   .card-hover-effect-lift .collection-card:hover,
