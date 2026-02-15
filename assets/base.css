@@ -221,6 +221,34 @@ select {
   font-weight: 700;
 }
 
+@media (max-width: 749px){
+  .header__column--left .search-action--hidden-on-menu{
+    display: none !important;
+  }
+
+  .header__column--right .search-action--hidden-on-drawer{
+    display: inline-flex !important;
+  }
+
+  .header__column--center{
+    display: none !important;
+  }
+
+  .header__columns{
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+  }
+
+  .header__column--left,
+  .header__column--right{
+    display: flex !important;
+    align-items: center !important;
+    gap: 14px !important;
+  }
+}
+
+
 @media (any-pointer: fine) and (prefers-reduced-motion: no-preference) {
   .card-hover-effect-lift .product-card:hover,
   .card-hover-effect-lift .collection-card:hover,

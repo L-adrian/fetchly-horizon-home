@@ -337,29 +337,6 @@
         "button_text": "Sign up",
         "button_link": ""
       }
-    },
-    "fetchly_footer_pB3D4y": {
-      "type": "fetchly-footer",
-      "custom_css": [],
-      "name": "Fetchly Footer",
-      "settings": {
-        "logo": "shopify://shop_images/logo_03b19a62-ffac-44c9-ac0d-1b374e6fb1d7.png",
-        "menu_1_title": "Shop by Category",
-        "menu_1": "shop-by-category",
-        "menu_2_title": "Shop by Brand",
-        "menu_2": "shop-by-brand",
-        "menu_3_title": "About Avora",
-        "menu_3": "about-avora",
-        "subscribe_title": "Subscribe",
-        "subscribe_text": "Join our newsletter to stay up to date on features  and releases.",
-        "email_placeholder": "Email",
-        "button_text": "Subscribe",
-        "disclaimer": "By subscribing you agree to with our Privacy Policy and provide  consent to receive updates from our company.",
-        "instagram_url": "https://www.instagram.com",
-        "email_url": "mailto:luisadriancuellarbarba@gmail.com",
-        "copyright_text": "© 2024 Relume. All rights reserved.",
-        "legal_menu": "policy-menu"
-      }
     }
   },
   "order": [
@@ -370,7 +347,6 @@
     "fetchly_designers_collection_VTw84t",
     "fetchly_faq_LNJTVx",
     "fetchly_lookbook_xXRDhQ",
-    "fetchly_membership_6DiGnd",
-    "fetchly_footer_pB3D4y"
+    "fetchly_membership_6DiGnd"
   ]
 }
