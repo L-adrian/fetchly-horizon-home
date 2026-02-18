@@ -15,9 +15,9 @@
       "type": "fetchly-footer",
       "name": "Fetchly Footer",
       "settings": {
-        "logo": "shopify://shop_images/logo_03b19a62-ffac-44c9-ac0d-1b374e6fb1d7.png",
+        "logo": "shopify://shop_images/logo.png",
         "menu_1_title": "Shop by Category",
-        "menu_1": "shop-by-category",
+        "menu_1": "shop-by-cateogry",
         "menu_2_title": "Shop by Brand",
         "menu_2": "shop-by-brand",
         "menu_3_title": "About Avora",
@@ -30,7 +30,7 @@
         "instagram_url": "https://INSTAGRAM.COM",
         "email_url": "mailto:luisadriancuellarbarba@gmail.com",
         "copyright_text": "© 2024 Relume. All rights reserved.",
-        "legal_menu": "policy-menu"
+        "legal_menu": "policy"
       }
     }
   },
