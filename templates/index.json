@@ -217,6 +217,7 @@
       ],
       "name": "Shop the look (Mock)",
       "settings": {
+        "image": "shopify://shop_images/f64de4e2b554223b99c9c6775ea9962727aef799.png",
         "bg": "#6b2b22",
         "fg": "#f6f0ea",
         "size_chart_text": "<p>Size chart info goes here.</p>",
@@ -237,6 +238,8 @@
         "img_1": "shopify://shop_images/b483450c9a356b994d9ca0b0c1b0a289ae2e2417.jpg",
         "img_2": "shopify://shop_images/bac31232cdd417ab0579983e11c598395b9c04f4.png",
         "img_3": "shopify://shop_images/2e9c0e82cde0f7d01b3a3cdbb76af1e76dab6613.png",
+        "img_4": "shopify://shop_images/57e2ff9407150bd4dc428de40fb230071de0778d.png",
+        "img_5": "shopify://shop_images/Placeholder_Image.png",
         "img_6": "shopify://shop_images/27ad825764047440839142fa0a6dc534e18b6008.jpg"
       }
     },
@@ -293,19 +296,27 @@
       "blocks": {
         "image_c6gDjW": {
           "type": "image",
-          "settings": {}
+          "settings": {
+            "image": "shopify://shop_images/3490b0a96f57b43218d309e4ef80ce03eca1dd5c.png"
+          }
         },
         "image_RTQK6A": {
           "type": "image",
-          "settings": {}
+          "settings": {
+            "image": "shopify://shop_images/57e2ff9407150bd4dc428de40fb230071de0778d.png"
+          }
         },
         "image_mGLym8": {
           "type": "image",
-          "settings": {}
+          "settings": {
+            "image": "shopify://shop_images/Placeholder_Image.png"
+          }
         },
         "image_Kf7L4f": {
           "type": "image",
-          "settings": {}
+          "settings": {
+            "image": "shopify://shop_images/f64de4e2b554223b99c9c6775ea9962727aef799.png"
+          }
         }
       },
       "block_order": [
