@@ -57,6 +57,7 @@
         "slide_t4EYXR": {
           "type": "slide",
           "settings": {
+            "image": "shopify://shop_images/slider-image.jpg",
             "label": "DESIGNER 1",
             "link": ""
           }
@@ -64,63 +65,72 @@
         "slide_cbB4X4": {
           "type": "slide",
           "settings": {
-            "label": "DESIGNER 1",
+            "image": "shopify://shop_images/slider-image.jpg",
+            "label": "DESIGNER 2",
             "link": ""
           }
         },
         "slide_RjYCJp": {
           "type": "slide",
           "settings": {
-            "label": "DESIGNER 1",
+            "image": "shopify://shop_images/slider-image.jpg",
+            "label": "DESIGNER 3",
             "link": ""
           }
         },
         "slide_VxgCyG": {
           "type": "slide",
           "settings": {
-            "label": "DESIGNER 1",
+            "image": "shopify://shop_images/slider-image.jpg",
+            "label": "DESIGNER 4",
             "link": ""
           }
         },
         "slide_wke9PB": {
           "type": "slide",
           "settings": {
-            "label": "DESIGNER 1",
+            "image": "shopify://shop_images/slider-image.jpg",
+            "label": "DESIGNER 5",
             "link": ""
           }
         },
         "slide_KdHLUN": {
           "type": "slide",
           "settings": {
-            "label": "DESIGNER 1",
+            "image": "shopify://shop_images/slider-image.jpg",
+            "label": "DESIGNER 6",
             "link": ""
           }
         },
         "slide_Jzpjtb": {
           "type": "slide",
           "settings": {
-            "label": "DESIGNER 1",
+            "image": "shopify://shop_images/slider-image.jpg",
+            "label": "DESIGNER 7",
             "link": ""
           }
         },
         "slide_kCzTYY": {
           "type": "slide",
           "settings": {
-            "label": "DESIGNER 1",
+            "image": "shopify://shop_images/slider-image.jpg",
+            "label": "DESIGNER 8",
             "link": ""
           }
         },
         "slide_9BMNDj": {
           "type": "slide",
           "settings": {
-            "label": "DESIGNER 1",
+            "image": "shopify://shop_images/slider-image.jpg",
+            "label": "DESIGNER 9",
             "link": ""
           }
         },
         "slide_bU8hkD": {
           "type": "slide",
           "settings": {
-            "label": "DESIGNER 1",
+            "image": "shopify://shop_images/slider-image.jpg",
+            "label": "DESIGNER 10",
             "link": ""
           }
         }
