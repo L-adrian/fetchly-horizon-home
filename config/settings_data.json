@@ -632,5 +632,11 @@
         }
       }
     }
+  },
+  "platform_customizations": {
+    "custom_css": [
+      "overflow-list > li.menu-list__list-item:nth-child(3) .menu-list__link-title {color: #ff0000 !important; font-weight: 700 !important;}",
+      ".fetchly-footer__top .fetchly-footer__col:nth-child(2).fetchly-footer__links li:nth-child(8) .fetchly-footer__link {color: #ff0000 !important; font-weight: 700 !important;}"
+    ]
   }
 }
