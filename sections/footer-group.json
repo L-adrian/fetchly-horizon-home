@@ -13,9 +13,7 @@
   "sections": {
     "fetchly_footer_UkzC3D": {
       "type": "fetchly-footer",
-      "custom_css": [
-        "overflow-list > li.menu-list__list-item:nth-child(3) .menu-list__link-title {color: #ff0000 !important; font-weight: 700 !important;}"
-      ],
+      "custom_css": [],
       "name": "Fetchly Footer",
       "settings": {
         "logo": "shopify://shop_images/logo.png",
