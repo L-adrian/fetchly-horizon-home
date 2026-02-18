@@ -334,18 +334,21 @@
         "perk_mGKNUt": {
           "type": "perk",
           "settings": {
+            "icon": "shopify://shop_images/Truck.png",
             "text": "Free shipping on all orders above"
           }
         },
         "perk_BqJExr": {
           "type": "perk",
           "settings": {
+            "icon": "shopify://shop_images/release_alert.png",
             "text": "Early Access to new collections"
           }
         },
         "perk_dQ8PiA": {
           "type": "perk",
           "settings": {
+            "icon": "shopify://shop_images/Vector.png",
             "text": "Earn points on each order"
           }
         }
